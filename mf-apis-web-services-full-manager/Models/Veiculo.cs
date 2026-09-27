@@ -1,7 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using mf_apis_web_services_fuel_manager.Models;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace mf_apis_web_services_full_manager.Models
+namespace mf_apis_web_services_fuel_manager.Models
 {
     [Table("Veiculos")]
     public class Veiculo : LinksHATEOS

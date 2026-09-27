@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
-namespace mf_apis_web_services_full_manager.Models
+namespace mf_apis_web_services_fuel_manager.Models
 {
     [Table("Usuarios")]
     public class Usuario
@@ -24,7 +24,7 @@ namespace mf_apis_web_services_full_manager.Models
     {
         [Display(Name = "Administrador")]
         Administrador,
-        [Display(Name = "Usuário")]
+        [Display(Name = "Usuario")]
         Usuario
     }
 }

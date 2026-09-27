@@ -1,11 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using mf_apis_web_services_fuel_manager.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace mf_apis_web_services_full_manager.Models
+namespace mf_apis_web_services_fuel_manager.Models
 {
     public class AppDbContext : DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        public AppDbContext(DbContextOptions options) : base(options)
         {
+
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -25,6 +27,6 @@ namespace mf_apis_web_services_full_manager.Models
         public DbSet<Veiculo> Veiculos { get; set; }
         public DbSet<Consumo> Consumos { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
-        public DbSet<VeiculoUsuarios> VeiculoUsuarios { get; set; }
+        public DbSet<VeiculoUsuarios> VeiculosUsuarios { get; set; }
     }
 }

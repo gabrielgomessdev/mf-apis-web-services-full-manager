@@ -1,7 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using mf_apis_web_services_fuel_manager.Models;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace mf_apis_web_services_full_manager.Models
+namespace mf_apis_web_services_fuel_manager.Models
 {
     [Table("Consumos")]
     public class Consumo : LinksHATEOS
@@ -17,6 +18,7 @@ namespace mf_apis_web_services_full_manager.Models
         public decimal Valor { get; set; }
         [Required]
         public TipoCombustivel Tipo { get; set; }
+
         [Required]
         public int VeiculoId { get; set; }
 
@@ -25,8 +27,8 @@ namespace mf_apis_web_services_full_manager.Models
 
     public enum TipoCombustivel
     {
-        Gasolina,
+        Diesel,
         Etanol,
-        Diesel
+        Gasolina
     }
 }

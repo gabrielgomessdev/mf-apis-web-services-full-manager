@@ -1,10 +1,12 @@
-﻿using mf_apis_web_services_full_manager.Models;
+﻿using mf_apis_web_services_fuel_manager.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace mf_apis_web_services_full_manager.Controllers
+namespace mf_apis_web_services_fuel_manager.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ConsumosController : ControllerBase
@@ -37,6 +39,7 @@ namespace mf_apis_web_services_full_manager.Controllers
         {
             var model = await _context.Consumos
                 .FirstOrDefaultAsync(c => c.Id == id);
+
             if (model == null) return NotFound();
 
             GerarLinks(model);
@@ -76,7 +79,8 @@ namespace mf_apis_web_services_full_manager.Controllers
         {
             model.Links.Add(new LinkDto(model.Id, Url.ActionLink(), rel: "self", metodo: "GET"));
             model.Links.Add(new LinkDto(model.Id, Url.ActionLink(), rel: "update", metodo: "PUT"));
-            model.Links.Add(new LinkDto(model.Id, Url.ActionLink(), rel: "delete", metodo: "DELETE"));
+            model.Links.Add(new LinkDto(model.Id, Url.ActionLink(), rel: "delete", metodo: "Delete"));
+
         }
     }
 }
